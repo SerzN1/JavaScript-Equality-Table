@@ -6,7 +6,10 @@
   "scripts": {
     "test": "npm test",
     "start": "tsc -w",
-    "build": "tsc"
+    "build": "npm run build:clean && npm run build:js && npm run build:page",
+    "build:clean": "rm -rf docs",
+    "build:js": "tsc",
+    "build:page": "mkdir docs && cp ./src/index.html ./src/setup.js ./src/index.js ./src/styles.css docs"
   },
   "repository": {
     "type": "git",
@@ -15,9 +18,8 @@
   "keywords": [
     "js",
     "equality",
+    "comparison",
     "table",
-    "equality",
-    "operator",
     "identity",
     "operator"
   ],
@@ -26,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/SerzN1/JavaScript-Equality-Table/issues"
   },
-  "homepage": "https://github.com/SerzN1/JavaScript-Equality-Table#readme"
+  "homepage": "https://github.com/SerzN1/JavaScript-Equality-Table#readme",
+  "dependencies": {
+    "typescript": "^4.3.2"
+  }
 }
