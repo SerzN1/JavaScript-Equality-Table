@@ -1,0 +1,30 @@
+{
+  "name": "javascript-equality-table",
+  "description": "JavaScript equality comparison is a crazy thing, sometimes. When in doubt, use three equals signs.",
+  "version": "1.0.0",
+  "main": "values.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "tsc -w",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SerzN1/JavaScript-Equality-Table.git"
+  },
+  "keywords": [
+    "js",
+    "equality",
+    "table",
+    "equality",
+    "operator",
+    "identity",
+    "operator"
+  ],
+  "author": "serzn1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SerzN1/JavaScript-Equality-Table/issues"
+  },
+  "homepage": "https://github.com/SerzN1/JavaScript-Equality-Table#readme"
+}
