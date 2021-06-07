@@ -1,4 +1,5 @@
 const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 const cr = (el: string, className = "", text = ""): HTMLElement => {
   const $el = document.createElement(el);
   $el.className = className;
@@ -31,76 +32,74 @@ class ForComparison {
   }
 }
 
-const buildComparisonTable = (values) => {
-  const comps = values.map((v) => new ForComparison(v));
-  const $table = cr("table", "table");
+class ComparisonTable {
+  constructor(private node: HTMLElement) {
 
-  // Table header
-  const $headRow = cr("tr", "header");
-  $headRow.appendChild(document.createElement("td"));
-  $table.appendChild($headRow);
-  for (let comp of comps) {
-    const $el = cr("span", "rotate", comp.asString);
-    const $td = cr("td", "term-vertical");
-    $td.appendChild($el);
-    $headRow.appendChild($td);
-  }
+    const values = window[this.node.dataset.componentSetup];
+    if (!values) return;
 
-  // Table content
-  for (let compX of comps) {
-    const $tr = cr("tr", "row");
-    const $td = cr("td", "term", compX.asString);
-    $tr.appendChild($td);
+    const comps = values.map((v) => new ForComparison(v));
+    const $table = cr("table", "table");
 
-    for (let compY of comps) {
-      const [evalStr1, r1] = compX.testResults(compY, "===");
-      const [evalStr2, r2] = compX.testResults(compY, "==");
-
-      let className = "";
-      let status = "";
-      let txt = "";
-
-      if (r1 && r2) {
-        status = "strictly equal";
-        className = "bg-green bg-no-invert";
-        txt = "=";
-      } else if (r2) {
-        status = "loosely equal";
-        className = "bg-red bg-no-invert";
-        txt = "&#8773;";
-      } else {
-        status = "not equal";
-        className = "bg-blue";
-        txt = "&#8800;";
-      }
-
-      const $td = cr("td", `equality ${className}`);
-      $td.innerHTML = `<div class="equality-item"><code class="equality-text">${txt}</code></div>`;
-      $td.setAttribute("data-title", `${compX} ${status} ${compY}`);
-      $tr.appendChild($td);
+    // Table header
+    const $headRow = cr("tr", "header");
+    $headRow.appendChild(document.createElement("td"));
+    $table.appendChild($headRow);
+    for (let comp of comps) {
+      const $el = cr("span", "rotate", comp.asString);
+      const $td = cr("td", "term-vertical");
+      $td.appendChild($el);
+      $headRow.appendChild($td);
     }
 
-    $table.appendChild($tr);
-  }
+    // Table content
+    for (let compX of comps) {
+      const $tr = cr("tr", "row");
+      const $td = cr("td", "term", compX.asString);
+      $tr.appendChild($td);
 
-  return $table;
+      for (let compY of comps) {
+        const [evalStr1, r1] = compX.testResults(compY, "===");
+        const [evalStr2, r2] = compX.testResults(compY, "==");
+
+        let className = "";
+        let status = "";
+        let txt = "";
+
+        if (r1 && r2) {
+          status = "strictly equal";
+          className = "bg-green bg-no-invert";
+          txt = "=";
+        } else if (r2) {
+          status = "loosely equal";
+          className = "bg-red bg-no-invert";
+          txt = "&#8773;";
+        } else {
+          status = "not equal";
+          className = "bg-blue";
+          txt = "&#8800;";
+        }
+
+        const $td = cr("td", `equality ${className}`);
+        $td.innerHTML = `<div class="equality-item"><code class="equality-text">${txt}</code></div>`;
+        $td.setAttribute("data-title", `${compX} ${status} ${compY}`);
+        $tr.appendChild($td);
+      }
+
+      $table.appendChild($tr);
+    }
+
+    this.node.appendChild($table);
+  }
+}
+
+const componentsMap = {
+  ComparisonTable,
 };
 
-const buildComparisonLegend = () => {
-  const $dt = cr("ul", "legend-list")
-
-  $dt.appendChild(buildLegendItem("bg-green bg-no-invert", "=", "strictly equal"))
-  $dt.appendChild(buildLegendItem("bg-red bg-no-invert", "&#8773;", "loosely equal"))
-  $dt.appendChild(buildLegendItem("bg-blue", "&#8800;", "not equal"))
-
-  function buildLegendItem(cl, markerHTML, text) {
-    const $item = cr("li", "legend-item");
-    const $marker = cr("span", `legend-marker ${cl}`);
-    $marker.innerHTML = markerHTML;
-    $item.appendChild($marker);
-    $item.append(text);
-    return $item;
+$$("[data-component]").forEach((node) => {
+  const Component = componentsMap[node.dataset.component];
+  if (Component) {
+    new Component(node);
   }
-
-  return $dt;
-}
+});

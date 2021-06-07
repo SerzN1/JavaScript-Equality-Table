@@ -1,11 +1,14 @@
 :root {
-  --font-body: "Poppins", sans-serif;
-  --font-code: "Fira Code", Fira, Input, monospace;
+  --font-body: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-code: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
 body {
   background: #202e38;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--font-body);
   color: #f1f5f6;
   cursor: default;
   margin: 0;
@@ -17,6 +20,7 @@ body {
 }
 abbr {
   cursor: help;
+  font-size: 0.85em;
 }
 code {
   font-size: inherit;
@@ -29,7 +33,7 @@ code {
 }
 
 h1 {
-  font: 700 3em "Poppins", sans-serif;
+  font: 700 3em/1 var(--font-body);
   color: #f1f5f6;
   text-align: center;
   margin: 0;
@@ -38,17 +42,20 @@ h1 {
 h2 {
   color: #f1f5f6;
   text-align: center;
-  font: 400 1.3em "Poppins", sans-serif;
-  margin: 0;
+  font: 400 1.3em/1 var(--font-body);
+  margin: 0.25em 0;
 }
-
+#table {
+  display: flex;
+  justify-content: center;
+}
 .table {
   border-spacing: 0.25rem;
-  margin: 0 auto;
+  margin-right: 80px;
 }
 .term,
 .term-vertical {
-  font: 400 1.3em/1.5rem "Poppins", sans-serif;
+  font: 400 1em/1.5rem var(--font-code);
   color: #f1f5f6;
   white-space: nowrap;
   text-align: right;
@@ -110,7 +117,7 @@ h2 {
   background: transparent;
 }
 .equality-text {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 22px;
   display: block;
 }
@@ -159,7 +166,7 @@ h2 {
   height: 25px;
   margin: 0 10px 0 0;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   box-shadow: 0.5px 1px rgba(0, 0, 0, 0.15);
   color: #222;
   font-size: 1.3rem;
@@ -186,4 +193,15 @@ h2 {
 }
 .github {
   fill: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

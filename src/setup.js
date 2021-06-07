@@ -1,4 +1,4 @@
-const values = [
+window["comparisonTableValues"] = [
   true,
   false,
   1,
@@ -20,21 +20,4 @@ const values = [
   [0],
   [1],
   NaN
-
-//   "`'true'`",
-//   "`'false'`",
-//   "`'1'`",
-//   "`'0'`",
-//   "`'-1'`",
-//   "",
-//   "`null`",
-//   "`undefined`",
-//   Infinity,
-//   -Infinity,
-//   "`[]`",
-//   "`{}`",
-//   [[]],
-//   [0],
-//   [1],
-//   "`parseFloat('nan')`"
 ];
