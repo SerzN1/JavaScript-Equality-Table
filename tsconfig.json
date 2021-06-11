@@ -6,6 +6,8 @@
     "rootDir": "src",
     "noImplicitAny": false,
     "removeComments": true,
+    "emitDeclarationOnly": true,
+    "declaration": true
   },
   "include": [
     "src/index.ts"

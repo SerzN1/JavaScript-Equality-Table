@@ -1,0 +1,207 @@
+:root {
+  --font-body: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-code: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+body {
+  background: #202e38;
+  font-family: var(--font-body);
+  color: #f1f5f6;
+  cursor: default;
+  margin: 0;
+}
+
+::selection {
+  color: #202e38;
+  background-color: #b9b9b9;
+}
+abbr {
+  cursor: help;
+  font-size: 0.85em;
+}
+code {
+  font-size: inherit;
+  font-family: var(--font-code);
+  color: #b9b9b9;
+}
+
+.header {
+  margin: 2rem auto;
+}
+
+h1 {
+  font: 700 3em/1 var(--font-body);
+  color: #f1f5f6;
+  text-align: center;
+  margin: 0;
+}
+
+h2 {
+  color: #f1f5f6;
+  text-align: center;
+  font: 400 1.3em/1 var(--font-body);
+  margin: 0.25em 0;
+}
+#table {
+  display: flex;
+  justify-content: center;
+}
+.table {
+  border-spacing: 0.25rem;
+  margin-right: 80px;
+}
+.term,
+.term-vertical {
+  font: 400 1em/1.5rem var(--font-code);
+  color: #f1f5f6;
+  white-space: nowrap;
+  text-align: right;
+  padding: 0 0.25rem;
+}
+.term-vertical {
+  padding: 0.25rem 0;
+  vertical-align: bottom;
+}
+.rotate {
+  writing-mode: vertical-rl;
+}
+.equality {
+  position: relative;
+}
+.equality::after {
+  z-index: 10;
+  content: attr(data-title);
+  background: #f9f8f7;
+  color: #333;
+  width: 100px;
+  position: absolute;
+  bottom: 100%;
+  opacity: 0;
+  transition: all 0.3s ease 0;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 0.5rem;
+  border-radius: 0.35rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.equality:hover::after {
+  transform: translateX(-50%) translateY(-25%);
+  transition: all 0.3s ease 0.35s;
+  opacity: 1;
+}
+.equality:hover .equality-item,
+.equality.bg-no-invert:hover .equality-item {
+  transform: scale(1.75);
+  background: inherit;
+  z-index: 1;
+}
+.equality:hover .equality-text,
+.equality.bg-no-invert .equality-text {
+  color: #222;
+}
+.equality-item {
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  background: #202e38;
+}
+.equality.bg-no-invert .equality-item {
+  background: transparent;
+}
+.equality-text {
+  font-size: 1.2rem;
+  line-height: 22px;
+  display: block;
+}
+
+.bg-yellow {
+  background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+}
+.bg-yellow .equality-text {
+  color: #cac650;
+}
+.bg-red {
+  background: linear-gradient(to bottom right, #ffc171 0%, #ff616d 100%);
+}
+.bg-red .equality-text {
+  color: #ff6661;
+}
+.bg-blue {
+  background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
+}
+.bg-blue .equality-text {
+  color: #3792dc;
+}
+.bg-green {
+  background: linear-gradient(to bottom right, #a7df62 0%, #58ac30 100%);
+}
+.bg-green .equality-text {
+  color: #85df62;
+}
+
+.legend-list {
+  font-size: 15px;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.legend-item {
+  list-style: none;
+  line-height: 25px;
+}
+.legend-item + .legend-item {
+  margin-left: 1.5rem;
+}
+.legend-marker {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0.5px 1px rgba(0, 0, 0, 0.15);
+  color: #222;
+  font-size: 1.3rem;
+  font-family: var(--font-code);
+}
+.legend-text {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 30px 5px 0;
+}
+.legend-direction {
+  display: inline-block;
+  margin: 10px 15px 10px 10px;
+}
+
+.warning {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+#footer {
+  text-align: center;
+  margin: 2em auto;
+}
+.github {
+  fill: white;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
