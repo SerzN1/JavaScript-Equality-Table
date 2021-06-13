@@ -8,21 +8,21 @@
     <meta name="description" content="JavaScript abstract VS strict equality comparison operations.">
     <meta name="keywords" content="JS,JavaScript,comparison,abstract equality,strict equality">
 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="JS Equality Comparison Table"/>
-    <meta name="twitter:description" content="JavaScript abstract VS strict equality comparison operations."/>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JS Equality Comparison Table" />
+    <meta name="twitter:description" content="JavaScript abstract VS strict equality comparison operations." />
 
     <meta property="og:title" content="JS Equality Comparison Table" />
     <meta property="og:description" content="JavaScript abstract VS strict equality comparison operations." />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://github.com/SerzN1/JavaScript-Equality-Table" />
+    <meta property="og:url" content="https://github.com/SerzN1/JavaScript-Equality-Table/" />
     <meta property="article:published_time" content="2021-06-13T10:34:08+00:00" />
     <meta property="article:modified_time" content="2021-06-13T10:34:08+00:00" />
     <meta property="article:tag" content="JS" />
     <meta property="article:tag" content="javascript" />
     <meta property="article:tag" content="comparison" />
 
-    <meta name="theme-color" content="#202e38"/>
+    <meta name="theme-color" content="#202e38" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
@@ -36,7 +36,8 @@
 <body>
     <header class="header">
         <h1>Equality in JavaScript</h1>
-        <h2>Rule of 👍 <span class="sr-only">thumb</span>: always use <abbr title="strict equality comparison">===</abbr> !</h2>
+        <h2>Rule of 👍 <span class="sr-only">thumb</span>: always use <abbr
+                title="strict equality comparison">===</abbr> !</h2>
     </header>
     <main id="content">
         <noscript>You need JavaScript enabled to run this application</noscript>
@@ -63,7 +64,20 @@
     </footer>
 
     <script src="./setup.js"></script>
-    <script src="./bundle.js"></script>
+    <script async src="./bundle.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => {
+                        console.log('SW: registered', reg);
+                    })
+                    .catch(err => {
+                        console.log('SW: registration failed', err);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
