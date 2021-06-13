@@ -33,7 +33,7 @@ code {
 }
 
 h1 {
-  font: 700 3em/1 var(--font-body);
+  font: 700 3rem/1 var(--font-body);
   color: #f1f5f6;
   text-align: center;
   margin: 0;
@@ -42,7 +42,7 @@ h1 {
 h2 {
   color: #f1f5f6;
   text-align: center;
-  font: 400 1.3em/1 var(--font-body);
+  font: 400 1.3rem/1 var(--font-body);
   margin: 0.25em 0;
 }
 #table {
@@ -55,7 +55,7 @@ h2 {
 }
 .term,
 .term-vertical {
-  font: 400 1em/1.5rem var(--font-code);
+  font: 400 1rem/1.5rem var(--font-code);
   color: #f1f5f6;
   white-space: nowrap;
   text-align: right;
@@ -189,7 +189,7 @@ h2 {
 
 #footer {
   text-align: center;
-  margin: 2em auto;
+  margin: 2rem auto;
 }
 .github {
   fill: white;
