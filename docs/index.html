@@ -5,12 +5,31 @@
     <meta charset="utf-8" />
     <title>JS Equality Comparison Table</title>
     <meta name="viewport" content="width=800">
-    <meta name="description" content="JavaScript abstract VS strict equality comparison operations">
+    <meta name="description" content="JavaScript abstract VS strict equality comparison operations.">
+    <meta name="keywords" content="JS,JavaScript,comparison,abstract equality,strict equality">
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="JS Equality Comparison Table"/>
+    <meta name="twitter:description" content="JavaScript abstract VS strict equality comparison operations."/>
+
+    <meta property="og:title" content="JS Equality Comparison Table" />
+    <meta property="og:description" content="JavaScript abstract VS strict equality comparison operations." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://github.com/SerzN1/JavaScript-Equality-Table" />
+    <meta property="article:published_time" content="2021-06-13T10:34:08+00:00" />
+    <meta property="article:modified_time" content="2021-06-13T10:34:08+00:00" />
+    <meta property="article:tag" content="JS" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="comparison" />
+
     <meta name="theme-color" content="#202e38"/>
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link rel="canonical" href="https://github.com/SerzN1/JavaScript-Equality-Table"/>
     <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" href="./images/icons-192.png">
+    <link rel="apple-touch-icon" href="./images/icon-192.png">
+    <link rel="manifest" href="./manifest.json">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -20,9 +39,11 @@
         <h2>Rule of 👍 <span class="sr-only">thumb</span>: always use <abbr title="strict equality comparison">===</abbr> !</h2>
     </header>
     <main id="content">
-        <div id="table" data-component="ComparisonTable" data-component-setup="comparisonTableValues"></div>
+        <noscript>You need JavaScript enabled to run this application</noscript>
+        <div id="table" data-component="ComparisonTable"></div>
         <aside id="legend">
             <ul class="legend-list">
+                <li class="legend-item"><span class="legend-marker bg-yellow">✔️</span> evaluated as</li>
                 <li class="legend-item"><span class="legend-marker bg-green">=</span> strictly equal</li>
                 <li class="legend-item"><span class="legend-marker bg-red">&#8773;</span> loosely equal</li>
                 <li class="legend-item"><span class="legend-marker bg-blue">&#8800;</span> not equal</li>

@@ -1,4 +1,4 @@
-window["comparisonTableValues"] = [
+window['TABLE_VALUES'] = [
   true,
   false,
   1,

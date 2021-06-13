@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2015",
-    "outDir": "src",
-    "rootDir": "src",
+    "module": "None",
+    "target": "es6",
     "noImplicitAny": false,
     "removeComments": true,
-    "emitDeclarationOnly": true,
-    "declaration": true
+    "lib": ["es5", "es6", "dom"],
+    "rootDir": "src",
+    "outFile": "./src/bundle.js",
   },
+  "esModuleInterop": true,
   "include": [
     "src/index.ts"
   ],

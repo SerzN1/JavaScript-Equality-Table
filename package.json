@@ -7,10 +7,11 @@
     "test": "npm test",
     "start": "tsc -w",
     "local": "npx serve ./src",
-    "build": "npm run build:clean && npm run build:copy && npm run build:es",
-    "build:clean": "rm -rf docs",
+    "build": "npm run build:clean && npm run build:copy && npm run build:images && npm run build:es",
+    "build:clean": "rm -rf docs && mkdir docs",
     "build:es": "esbuild ./src/index.ts --bundle --minify --sourcemap --outfile=./docs/bundle.js",
-    "build:copy": "mkdir docs && cp ./src/index.html ./src/setup.js ./src/styles.css ./src/images/* ./src/favicon.ico ./src/manifest.json docs",
+    "build:copy": "cp ./src/index.html ./src/setup.js ./src/styles.css ./src/favicon.ico ./src/manifest.json docs",
+    "build:images": "cp -R src/images/ docs/images",
     "prepare": "husky install"
   },
   "repository": {

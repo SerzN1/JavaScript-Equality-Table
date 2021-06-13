@@ -3,21 +3,26 @@
     "name": "JS Equality Comparison Table",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "images/icon-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/icons-512.png",
+        "src": "images/icon-512.png",
         "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "images/icon.svg",
+        "type": "image/svg",
         "sizes": "512x512",
         "purpose": "any maskable"
       }
     ],
-    "start_url": "/?source=pwa",
+    "start_url": "./?source=pwa",
     "background_color": "#202e38",
     "display": "standalone",
-    "scope": "/",
+    "scope": "./",
     "theme_color": "#202e38",
     "description": "JavaScript abstract VS strict equality comparison operations"
   }

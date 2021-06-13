@@ -80,7 +80,7 @@ h2 {
   position: absolute;
   bottom: 100%;
   opacity: 0;
-  transition: all 0.3s ease 0;
+  transition: all 0.3s ease 0s;
   font-size: 12px;
   line-height: 1.4;
   padding: 0.5rem;
@@ -100,11 +100,12 @@ h2 {
   transform: scale(1.75);
   background: inherit;
   z-index: 1;
-}
-.equality:hover .equality-text,
-.equality.bg-no-invert .equality-text {
   color: #222;
 }
+/* .equality:hover .equality-text,
+.equality.bg-no-invert .equality-text {
+  color: #222;
+} */
 .equality-item {
   width: 22px;
   height: 22px;
@@ -112,38 +113,37 @@ h2 {
   position: relative;
   transition: all 0.3s ease;
   background: #202e38;
+  display: block;
+  font-size: 1.2rem;
+  line-height: 22px;
 }
 .equality.bg-no-invert .equality-item {
   background: transparent;
-}
-.equality-text {
-  font-size: 1.2rem;
-  line-height: 22px;
-  display: block;
+  color: #222;
 }
 
 .bg-yellow {
   background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
 }
-.bg-yellow .equality-text {
+.bg-yellow .equality-item {
   color: #cac650;
 }
 .bg-red {
   background: linear-gradient(to bottom right, #ffc171 0%, #ff616d 100%);
 }
-.bg-red .equality-text {
+.bg-red .equality-item {
   color: #ff6661;
 }
 .bg-blue {
   background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
 }
-.bg-blue .equality-text {
+.bg-blue .equality-item {
   color: #3792dc;
 }
 .bg-green {
   background: linear-gradient(to bottom right, #a7df62 0%, #58ac30 100%);
 }
-.bg-green .equality-text {
+.bg-green .equality-item {
   color: #85df62;
 }
 
