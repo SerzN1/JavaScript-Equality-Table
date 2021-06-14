@@ -150,6 +150,7 @@ h2 {
 .legend-list {
   font-size: 15px;
   margin: 1.5rem auto;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

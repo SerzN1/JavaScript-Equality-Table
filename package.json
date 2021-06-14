@@ -10,7 +10,7 @@
     "build": "npm run build:clean && npm run build:copy && npm run build:images && npm run build:es",
     "build:clean": "rm -rf docs && mkdir docs",
     "build:es": "esbuild ./src/index.ts --bundle --minify --sourcemap --outfile=./docs/bundle.js",
-    "build:copy": "cp ./src/index.html ./src/setup.js ./src/styles.css ./src/favicon.ico ./src/manifest.json docs",
+    "build:copy": "cp ./src/index.html ./src/setup.js ./src/styles.css ./src/favicon.ico ./src/manifest.json ./src/robots.txt docs",
     "build:images": "cp -R src/images/ docs/images",
     "prepare": "husky install"
   },
